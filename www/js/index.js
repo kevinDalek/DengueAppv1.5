@@ -758,9 +758,12 @@ var longitude = position.coords.longitude;
 
                     });
         //set marker on user location
-        var marker = new mapboxgl.Marker()
-          .setLngLat([longitude, latitude])
-          .addTo(mymap);
+       mymap.addControl(new mapboxgl.GeolocateControl({
+        positionOptions: {
+        enableHighAccuracy: true
+          },
+        trackUserLocation: true
+        }));
 
       //geojson for hospitals and healthcare centre stored in var  hospital
       var hospitals = {
@@ -2004,18 +2007,14 @@ var longitude = position.coords.longitude;
 
 
       //code for search box
-          var geocoder = new MapboxGeocoder({ // Initialize the geocoder
-            accessToken: mapboxgl.accessToken, // Set the access token
-            mapboxgl: mapboxgl, // Set the mapbox-gl instance
-            marker: false, // Do not use the default marker style
-            proximity: {
-              longitude: longitude,
-              latitude: latitude
-                  }
-          });
+         var geocoder = new MapboxGeocoder({ // Initialize the geocoder
+			  		accessToken: mapboxgl.accessToken, // Set the access token
+			  		mapboxgl: mapboxgl,
+					});
 
-          // Add the geocoder to the map
-          mymap.addControl(geocoder);
+					// Add the geocoder to the map
+					
+					document.getElementById('geocode').appendChild(geocoder.onAdd(mymap));
     
   
       }
