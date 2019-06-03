@@ -747,7 +747,7 @@ var latitude = position.coords.latitude;
 var longitude = position.coords.longitude;
         
         //token for mapbox API
-        mapboxgl.accessToken = 'pk.eyJ1IjoidmFzaGlsMTIiLCJhIjoiY2p2Z28wMGxiMDRyMzN5cXRseHZqc3F5OSJ9.JIbKYu71J0xBnW0OLaCYFw';
+        mapboxgl.accessToken = 'pk.eyJ1IjoidmFzaGlsMTIiLCJhIjoiY2p3Z3F2ejc5MG9tMDN6cGhxbmF5dGYzcCJ9.FB_mMTv63KcMgRm6zwU7xA';
 
         //initialise map
         mymap = new mapboxgl.Map({
